@@ -159,3 +159,4 @@ https://localhost:9443/ibmmq/console/login.html
 # Referencias
 https://www.ibm.com/support/knowledgecenter/es/SSFKSJ_8.0.0/com.ibm.mq.pro.doc/q001020_.htm
 https://www.ibm.com/support/knowledgecenter/es/SSFKSJ_8.0.0/com.ibm.mq.pro.doc/q004370_.htm
+https://developer.ibm.com/technologies/spring/tutorials/mq-jms-application-development-with-spring-boot
