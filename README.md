@@ -82,6 +82,12 @@ docker run \
  usuario:admin
  password: passw0rd
 ```
+
+![alt text](https://github.com/giovany79/ibm-mq/blob/master/images/ibm-mq-console.png)
+
+![alt text](https://github.com/giovany79/ibm-mq/blob/master/images/ibmmq-console2.png)
+
+
 4. Crear una aplicación springboot con el initializer de spring
 
 5. En el archivo **build.gradle**(https://github.com/giovany79/ibm-mq/blob/master/build.gradle). modificarlo para adicionar las siguientes librerias:
