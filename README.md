@@ -78,9 +78,10 @@ docker run \
  
  https://localhost:9443/ibmmq/console/login.html
  
+ ```console
  usuario:admin
- password: passw0rdx
-
+ password: passw0rd
+```
 
 # Referencias
 https://www.ibm.com/support/knowledgecenter/es/SSFKSJ_8.0.0/com.ibm.mq.pro.doc/q001020_.htm
