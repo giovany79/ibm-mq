@@ -84,8 +84,25 @@ docker run \
 ```
 4. Crear una aplicación springboot con el initializer de spring
 
-5. En el archivo build.gradle modificarlo para adicionar las siguientes librerias:
+5. En el archivo **build.gradle**(https://github.com/giovany79/ibm-mq/blob/master/build.gradle). modificarlo para adicionar las siguientes librerias:
 
+### implementation('org.springframework.boot:spring-boot-starter-webflux')
+Inicia las configuraciones básicas de springboot con webflux
+
+### implementation('com.ibm.mq:mq-jms-spring-boot-starter:2.2.3')
+Realiza las configuraciones básicas para acceder a un qmanager a una cola expecifica.
+
+6. Se debe crear un archivo de propiedades application.yaml con las siguientes propiedades del IBM MQ local
+
+```console
+ibm:
+  mq:
+    queue-manager: QM1
+    channel: DEV.ADMIN.SVRCONN
+    conn-name: localhost(1414)
+    user: admin
+    password: passw0rdx
+```
 
 # Referencias
 https://www.ibm.com/support/knowledgecenter/es/SSFKSJ_8.0.0/com.ibm.mq.pro.doc/q001020_.htm
