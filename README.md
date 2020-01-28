@@ -82,6 +82,10 @@ docker run \
  usuario:admin
  password: passw0rd
 ```
+4. Crear una aplicación springboot con el initializer de spring
+
+5. En el archivo build.gradle modificarlo para adicionar las siguientes librerias:
+
 
 # Referencias
 https://www.ibm.com/support/knowledgecenter/es/SSFKSJ_8.0.0/com.ibm.mq.pro.doc/q001020_.htm
