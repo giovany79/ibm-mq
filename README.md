@@ -92,7 +92,7 @@ Inicia las configuraciones básicas de springboot con webflux
 ### implementation('com.ibm.mq:mq-jms-spring-boot-starter:2.2.3')
 Realiza las configuraciones básicas para acceder a un qmanager a una cola expecifica.
 
-6. Se debe crear un archivo de propiedades application.yaml con las siguientes propiedades del IBM MQ local
+6. Se debe crear un archivo de propiedades **application.yaml**(https://github.com/giovany79/ibm-mq/blob/master/src/main/resources/application.yaml) con las siguientes propiedades del IBM MQ local
 
 ```console
 ibm:
@@ -103,6 +103,49 @@ ibm:
     user: admin
     password: passw0rdx
 ```
+
+7. Se crea la clase **ControllerMQ.java**(https://github.com/giovany79/ibm-mq/blob/master/src/main/java/co/com/gcode/webspheremq/ControllerMQ.java) con los métodos que va a consumir los servicios:
+
+Poner un mensaje en una cola:
+```java
+ @GetMapping("send")
+    public String sendMessage(){
+        try{
+            jmsTemplate.convertAndSend("DEV.QUEUE.1", "Hello World!");
+            return "OK";
+        }catch(JmsException ex){
+            ex.printStackTrace();
+            return "FAIL";
+        }
+    }
+
+```
+Recibir un mensaje de una cola:
+
+```java
+    @GetMapping("recv")
+    String recv(){
+        try{
+            return jmsTemplate.receiveAndConvert("DEV.QUEUE.1").toString();
+        }catch(JmsException ex){
+            ex.printStackTrace();
+            return "FAIL";
+        }
+    }
+```
+8. Compilar el servicio y correrlo
+
+9. Consumir el servicio para poner el mensaje "hello word"
+
+http://localhost:8080/mq/send
+
+10. Consumir el servicio para leer el mensaje en la cola
+
+http://localhost:8080/mq/recv
+
+11. Revisar el mensaje en la consola administrativa:
+
+https://localhost:9443/ibmmq/console/login.html
 
 # Referencias
 https://www.ibm.com/support/knowledgecenter/es/SSFKSJ_8.0.0/com.ibm.mq.pro.doc/q001020_.htm
