@@ -4,4 +4,7 @@ ibm:
     channel: DEV.ADMIN.SVRCONN
     conn-name: localhost(1414)
     user: admin
-    password: passw0rdx
+    password: passw0rd
+spring:
+  jms:
+    pub-sub-domain: true

@@ -35,5 +35,16 @@ public class ControllerMQ {
             return "FAIL";
         }
     }
+    
+    @GetMapping("sendTopic")
+    public String sendTopic(){
+    	try{
+            jmsTemplate.convertAndSend("DEV.BASE.TOPIC", "Hello World Topic MQ!");
+            return "OK";
+        }catch(JmsException ex){
+            ex.printStackTrace();
+            return "FAIL";
+        }
+    }
 }
 
