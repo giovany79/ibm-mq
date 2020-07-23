@@ -155,6 +155,20 @@ https://localhost:9443/ibmmq/console/login.html
 
 ![alt text](https://github.com/giovany79/ibm-mq/blob/master/images/ibm-mq-contenidocola.png)
 
+# Posibles errores
+
+## Error de versión mayor (A JNI error has occurred - UnsupportedClassVersionError)
+
+El proyecto esta compilado con Java 11. Para esto debes ir a las propiedades del proyecto y cambiar la version del SDK
+
+### intellij
+
+File > Project Structure > Project Settings > Project > Project SDK
+
+Elejir el SDK de Java 11
+
+
+
 
 # Referencias
 https://www.ibm.com/support/knowledgecenter/es/SSFKSJ_8.0.0/com.ibm.mq.pro.doc/q001020_.htm
